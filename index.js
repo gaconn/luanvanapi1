@@ -8,4 +8,5 @@ app.use(express.json())
 app.use(express.urlencoded({extended: true}))
 app.use('/public', express.static('public'))
 routes(app)
-app.listen(process.env.SERVER_PORT_NUMBER, () => console.log("server connect to port : ", process.env.SERVER_PORT_NUMBER))
+const PORT = process.env.PORT ? process.env.PORT : 5000 
+app.listen(PORT, () => console.log("server connect to port : ", PORT))
